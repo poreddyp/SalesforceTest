@@ -3,7 +3,7 @@ Change Log:
 
 2015/04/07 - AF - created.
 ***********************************************/
-
+//Test comment
 public with sharing class olgFG_LoanSum {
 
     public static void gen (olg_Loan__c l) {
