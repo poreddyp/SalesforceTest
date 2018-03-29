@@ -2,7 +2,7 @@
 * 
 
 # But not these files...
-! olgFG_LoanSum*
-! olgFG_LoanSum_NEW*
+! olgFG_LoanSum.cls
+! olgFG_LoanSum_NEW.cls
 ! README
 ! .gitignore
