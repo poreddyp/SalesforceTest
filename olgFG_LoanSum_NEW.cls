@@ -1,5 +1,6 @@
 /*
  * Created by Prab Poreddy on 3/29/2018 to update the summary reflect data captured by OLG instead of tape.
+ * Added another comment on gitHub.
  */
 public class olgFG_LoanSum_NEW {
 	public static void gen (olg_Loan__c l) {
