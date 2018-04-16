@@ -3,7 +3,7 @@
  */
 public class olg_BulkLoanEditor {
 
-//	public String loanInput {get;set;} // for user input
+	public String loanInput {get;set;} // for user input
 	public static List<selectableLoan> validLoans {get;set;} // to be used to display valid loans for editing
 	private static List<selectableLoan> invalidLoans {get;set;}
 	private static String invalidLoansList {get;set;}
@@ -17,18 +17,30 @@ public class olg_BulkLoanEditor {
 	}
 
 	//      Method to be invoked by a button to grab input string from screen
+	public PageReference showLoanInfo(){
+		loanInput = this.loanInput;
+		showLoanInfo(loanInput);
+		return null;
+	}
+
+	private static ApexPages.Message addApexMsg(String msg, ApexPages.Severity sev){
+		ApexPages.Message message = new ApexPages.Message(sev, msg);
+		return message;
+	}
+
 	public static String showLoanInfo(String loanInput){
-//		loanInput   = this.loanInput;
 		validLoans      = new List<selectableLoan>();
 		invalidLoans    = new List<selectableLoan>();
 		if(loanInput == null || loanInput == ''){
 			System.debug('Please enter comma-separated list of loans');
-			ApexPages.Message  Msg = new ApexPages.Message(ApexPages.Severity.ERROR,'Please enter comma-separated list of loans to view details.');
-			ApexPages.addMessage(Msg);
+			addApexMsg('Please enter comma-separated list of loans',ApexPages.Severity.ERROR);
+//			ApexPages.Message  Msg = new ApexPages.Message(ApexPages.Severity.ERROR,'Please enter comma-separated list of loans to view details.');
+//			ApexPages.addMessage(Msg);
 		}
 		else {
 			loanInput = loanInput.replaceAll('\\s+', ''); // removes spaces in input string
- 			checkLoans(loanInput);
+ 			System.debug('the loan list provided is: '+ loanInput);
+//			checkLoans(loanInput);
 //			for (Integer i=0; i<loanInput.split(',').size();i++){
 //				checkLoans(loanInput.split(',').get(i));
 //			}
